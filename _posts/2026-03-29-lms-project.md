@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "복잡한 LMS를 콘솔에 담다: Wanted Skills Online 설계기와 백엔드 엔지니어의 핵심 역량"
-date: 2026-03-24
+date: 2026-03-29
 categories: [Project, Backend]
 tags: [Java, MySQL, JDBC, Architecture, Career]
 ---
