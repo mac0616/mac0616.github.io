@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <style>
+    /* 보내주신 CSS 스타일 그대로 적용 */
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+    a { text-decoration: none; color: inherit; }
+    .container { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+    .sidebar { background-color: #020617; padding: 24px; border-right: 1px solid #1e293b; }
+    .profile { text-align: center; }
+    .profile img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 16px; }
+    .profile h2 { margin: 0; font-size: 20px; }
+    .profile p { font-size: 14px; color: #94a3b8; margin-top: 8px; }
+    .nav { margin-top: 40px; }
+    .nav a { display: block; padding: 10px; border-radius: 8px; margin-bottom: 8px; color: #cbd5f5; }
+    .nav a:hover { background-color: #1e293b; }
+    .main { padding: 40px; }
+    .header { margin-bottom: 40px; }
+    .header h1 { margin: 0; font-size: 28px; }
+    .post { background-color: #020617; padding: 20px; border-radius: 12px; border: 1px solid #1e293b; margin-bottom: 20px; transition: all 0.2s; }
+    .post:hover { transform: translateY(-4px); border-color: #38bdf8; }
+    .date { font-size: 12px; color: #64748b; margin-top: 10px; }
+    @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .sidebar { border-right: none; border-bottom: 1px solid #1e293b; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="https://via.placeholder.com/100" alt="profile">
+        <h2>{{ site.title }}</h2>
+        <p>{{ site.description }}<br/>문제를 해결하며 성장하는 개발자</p>
+      </div>
+      <nav class="nav">
+        <a href="/">🏠 Home</a>
+        <a href="#">📚 Posts</a>
+        <a href="#">💼 Projects</a>
+      </nav>
+    </aside>
+    <main class="main">
+      {{ content }}
+    </main>
+  </div>
+</body>
+</html>
