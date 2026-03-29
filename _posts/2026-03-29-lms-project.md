@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: default
 title: "복잡한 LMS를 콘솔에 담다: Wanted Skills Online 설계기와 백엔드 엔지니어의 핵심 역량"
-date: 2026-03-29 18:00:00 +0900
+date: 2026-03-24
 categories: [Project, Backend]
 tags: [Java, MySQL, JDBC, Architecture, Career]
 ---
@@ -21,16 +21,16 @@ tags: [Java, MySQL, JDBC, Architecture, Career]
 편리한 프레임워크 대신 **Pure Java, JDBC, MySQL**이라는 로우레벨 조합을 선택했습니다.
 
 * **JDBC 선택 이유**: SQL 쿼리가 컴파일 시점에 체크되지 않는 불편함이 있지만, DB와의 직접적인 통신 과정을 이해하고 자원(Connection, PreparedStatement) 관리의 중요성을 직접 체험하기 위함이었습니다.
-* [cite_start]**Layered Architecture**: MVC 패턴을 엄격히 준수하여 뷰와 로직을 완전히 분리했습니다 [cite: 22-27].
-    * [cite_start]**View**: `InputView`와 `OutputView`로 세분화하여 터미널에서도 유저 친화적인 UX 제공 [cite: 149-152, 205].
+* **Layered Architecture**: MVC 패턴을 엄격히 준수하여 뷰와 로직을 완전히 분리했습니다.
+    * **View**: `InputView`와 `OutputView`로 세분화하여 터미널에서도 유저 친화적인 UX 제공.
     * **Controller/Service**: 권한별 비즈니스 로직 처리 및 데이터 무결성 검증.
     * **DAO & DTO**: 영속성 계층을 분리하고 DTO를 활용해 엔티티 노출 최소화.
 
 ### 🤝 협업의 기술: "물리적 격리를 통한 병렬 개발"
 프로젝트의 최대 병목인 **Merge Conflict**를 해결하기 위해 도메인 중심의 패키지 설계를 도입했습니다.
 
-* [cite_start]**도메인별 패키지 분리**: `course`, `enrollment`, `payment` 등 도메인별로 패키지를 완전히 격리하여 코드 간섭을 최소화했습니다 [cite: 211-215]. [cite_start]이를 통해 대규모 코드 병합 시에도 크리티컬한 충돌 없이 완수할 수 있었습니다[cite: 210].
-* [cite_start]**협업 툴 체인**: **GitHub Discussions**로 TO-DO를 투명하게 공유하고 [cite: 43-45], **IntelliJ Code With Me**로 실시간 페어 프로그래밍을 진행하며 정산 로직의 버그를 즉각 해결했습니다.
+* **도메인별 패키지 분리**: `course`, `enrollment`, `payment` 등 도메인별로 패키지를 완전히 격리하여 코드 간섭을 최소화했습니다. 이를 통해 대규모 코드 병합 시에도 크리티컬한 충돌 없이 완수할 수 있었습니다.
+* **협업 툴 체인**: **GitHub Discussions**로 TO-DO를 투명하게 공유하고, **IntelliJ Code With Me**로 실시간 페어 프로그래밍을 진행하며 정산 로직의 버그를 즉각 해결했습니다.
 
 ---
 
@@ -46,24 +46,9 @@ tags: [Java, MySQL, JDBC, Architecture, Career]
 2.  **성능 최적화**: API 응답 시간 단축 및 DB 쿼리 성능 개선을 통한 인프라 비용 절감.
 3.  **데이터 신뢰도**: 정합성 오류로 인한 CS 발생률 제로화.
 
-### 🤝 조직 내 협업 방식
-* **PO/기획**: 비즈니스 요구사항을 기술적 사양으로 정의하고 예외 상황(Edge Case) 발굴.
-* **프론트엔드**: 'API Contract First' 접근을 통해 명확한 스펙 공유.
-* **데이터 분석가**: 사후 분석이 아닌 실시간 의사결정이 가능한 데이터 구조 구축.
-
----
-
-## 3. 성장 로드맵: 지속 가능한 엔지니어가 되는 법
-
-이번 LMS 프로젝트를 발판 삼아 다음과 같은 과제를 수행하며 성장하고자 합니다.
-
-1.  **동시성 제어 및 성능 고도화**: 수강 신청 시스템의 동시성 문제를 해결하고, 대량 데이터 조회 성능을 수치화하여 개선한다.
-2.  **기술적 의사결정의 문서화**: "왜 이 기술인가?"에 대해 비즈니스 상황과 비용 관점에서 논리를 세우고 지속적으로 아카이빙한다.
-3.  **데이터와 엔지니어링의 결합**: 단순 CRUD를 넘어 Kafka, Airflow 등 대규모 트랙픽 처리가 가능한 전문가로 성장한다.
-
 ---
 
 ## 💡 회고를 마치며
-**Wanted Skills Online** 프로젝트는 단순한 프로그램을 넘어, 구조적 사고와 협업의 가치를 증명한 여정이었습니다. [cite_start]이번에 설계한 도메인 분리 구조는 향후 '소셜 로그인'이나 '수료증 발급' 기능 추가가 용이한 확장성을 확보했습니다 [cite: 260-268]. 
+**Wanted Skills Online** 프로젝트는 단순한 프로그램을 넘어, 구조적 사고와 협업의 가치를 증명한 여정이었습니다. 이번에 설계한 도메인 분리 구조는 향후 '소셜 로그인'이나 '수료증 발급' 기능 추가가 용이한 확장성을 확보했습니다. 
 
 비즈니스의 성장을 가속화하는 탄탄한 구조를 만드는 엔지니어가 되기 위해, 오늘도 실행 계획(Execution Plan)을 분석하며 최적의 경로를 고민합니다.
